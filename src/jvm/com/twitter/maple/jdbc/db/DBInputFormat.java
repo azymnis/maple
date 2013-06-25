@@ -137,9 +137,7 @@ public class DBInputFormat<T extends DBWritable>
         /** {@inheritDoc} */
         public void close() throws IOException {
             try {
-                connection.commit();
                 results.close();
-                statement.close();
             } catch (SQLException exception) {
                 throw new IOException("unable to commit and close", exception);
             }
